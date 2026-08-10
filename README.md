@@ -17,11 +17,11 @@
 </p>
 
 <p align="center">
-  <a href="#-download--install">Download</a> ·
+  <a href="#download--install">Download</a> ·
   <a href="manual.md">User manual</a> ·
-  <a href="#-screenshots">Screenshots</a> ·
-  <a href="#-faq">FAQ</a> ·
-  <a href="#-support--feature-requests">Support</a>
+  <a href="#screenshots">Screenshots</a> ·
+  <a href="#faq">FAQ</a> ·
+  <a href="#support--feature-requests">Support</a>
 </p>
 
 ---
@@ -35,13 +35,13 @@ Commercial borelog software is powerful but expensive and heavy.
 SPT borelog program that produces clean, standardized boring log sheets
 — and imports the Excel files you already have.
 
-- ✅ **Free** (version 1.x, full-featured — see [FAQ](#-faq))
+- ✅ **Free** (version 1.x, full-featured — see [FAQ](#faq))
 - ✅ **Familiar output** — template-style borelog sheets engineers and
   reviewers recognize instantly
 - ✅ **Your data stays yours** — plain JSON project files on your disk,
   works fully offline
 
-## 📷 Screenshots
+## Screenshots
 
 **Live borelog editor** — type in the tables on the left, the sheet
 redraws instantly on the right:
@@ -64,7 +64,7 @@ classification, groundwater level, and the field SPT N-value profile:
   <img src="assets/screenshot-sheet.png" alt="Geotechnical borehole log PDF with soil strata symbols and SPT N-value curve" width="75%">
 </p>
 
-## ⭐ Features
+## Features
 
 - **SPT borehole log sheets** drawn live: ruler depth scale, sample
   symbols (split spoon / Shelby tube), blow counts with computed
@@ -86,7 +86,7 @@ classification, groundwater level, and the field SPT N-value profile:
 - **Offline-first**: no account, no cloud dependency; automatic update
   notifications when you're online
 
-## ⬇️ Download & install
+## Download & install
 
 1. Grab the latest Windows package from the
    **[Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest)**
@@ -97,7 +97,7 @@ classification, groundwater level, and the field SPT N-value profile:
 > New here? Open **File → Open demo project** for a complete example
 > borelog you can edit and export straight away.
 
-## 🚀 Quick start
+## Quick start
 
 1. **File → Company settings** — your company name, address, and logo
    (drawn on every sheet).
@@ -110,7 +110,7 @@ classification, groundwater level, and the field SPT N-value profile:
 
 Full guide: **[User manual](manual.md)**.
 
-## 🔄 Updates
+## Updates
 
 The app checks [`updates/latest.json`](updates/latest.json) at startup
 (silently, never blocking — offline machines are unaffected) and shows
@@ -125,7 +125,7 @@ marked required. Manifest fields:
 | `notes` | One-line "what you get" shown in the update notice |
 | `promo` *(optional)* | `{id, text, url, menu_text}` — dismissible in-app banner + Help-menu entry; omit for none |
 
-## ❓ FAQ
+## FAQ
 
 **Is GeoEQ SPT Logs really free?**
 Yes — version 1.x is free and full-featured, for both commercial and
@@ -154,17 +154,17 @@ the graph while printing the true value.
 **Will it run on macOS?**
 A macOS build is planned. Watch the Releases page.
 
-## 💬 Support & feature requests
+## Support & feature requests
 
-- 🐞 **Found a bug?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
+- **Found a bug?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
   with what you did, what happened, and a screenshot if possible.
-- 💡 **Want a feature?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
+- **Want a feature?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
   titled `Feature request: …` and tell us what you need and how you'd
   use it — upcoming versions are planned from these discussions, so
   say what *you* want in the software.
-- 📖 Check the **[user manual](manual.md)** first for how-tos.
+- Check the **[user manual](manual.md)** first for how-tos.
 
-## 📚 Citation
+## Citation
 
 If you use GeoEQ SPT Logs in a report, thesis, or publication, please
 cite it as:
