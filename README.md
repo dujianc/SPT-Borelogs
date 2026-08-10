@@ -22,6 +22,7 @@
   <a href="#download--install">Download</a> ·
   <a href="manual.md">User manual</a> ·
   <a href="#screenshots">Screenshots</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
   <a href="#faq">FAQ</a> ·
   <a href="#support--feature-requests">Support</a>
 </p>
