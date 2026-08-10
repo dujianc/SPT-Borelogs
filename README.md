@@ -60,10 +60,21 @@ geotechnical software studio built on the `geoeq` Python ecosystem.
 
 The app checks this repository for new versions
 ([`updates/latest.json`](updates/latest.json)). When a newer release is
-available you are notified at startup; some releases can be marked
-**required**, in which case the app asks you to update before
-continuing. You can always download the newest build manually from the
-Releases page.
+available you are notified at startup with what the update brings; some
+releases can be marked **required**, in which case the app asks you to
+update before continuing (enforced only when online — field laptops
+without internet keep working). You can always download the newest
+build manually from the Releases page.
+
+**Manifest fields** (`updates/latest.json`):
+
+| Field | Meaning |
+|---|---|
+| `version` | Latest released version — older builds show an update notice |
+| `minimum_version` | Builds older than this must update to continue |
+| `download_url` | Where the notice's Download button points |
+| `notes` | One-line "what you get" shown in the update notice |
+| `promo` *(optional)* | `{id, text, url, menu_text}` — shows a dismissible in-app banner and a Help-menu entry; omit for none. Each `id` is shown until dismissed, then never again |
 
 ## Manual & support
 
