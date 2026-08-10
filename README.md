@@ -1,10 +1,10 @@
-# SPT Borelog — a GeoEQ software
+# GeoEQ SPT Logs
 
 Professional SPT borehole log software for geotechnical engineers —
 enter or import field data, get clean template-style borelog sheets and
 print-ready PDFs in minutes.
 
-**SPT Borelog** is part of **[GeoEQ](https://geoeq.org)** — a
+**GeoEQ SPT Logs** is part of **[GeoEQ](https://geoeq.org)** — a
 geotechnical software studio built on the `geoeq` Python ecosystem.
 
 > **This repository distributes ready-to-run builds only.**
@@ -17,9 +17,9 @@ geotechnical software studio built on the `geoeq` Python ecosystem.
 ## Download & install
 
 1. Open the **[latest release](https://github.com/geoeq/SPT-Borelogs/releases/latest)**.
-2. Download the Windows package (`SPT-Borelog-<version>-setup.exe` or
+2. Download the Windows package (`GeoEQ-SPT-Logs-<version>-setup.exe` or
    the portable `.zip`).
-3. Run the installer (or unzip anywhere and run `SPT Borelog.exe`).
+3. Run the installer (or unzip anywhere and run `GeoEQ SPT Logs.exe`).
 
 **Requirements:** Windows 10 / 11, 64-bit. No other software needed.
 

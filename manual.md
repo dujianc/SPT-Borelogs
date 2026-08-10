@@ -1,4 +1,4 @@
-# SPT Borelog — User Manual
+# GeoEQ SPT Logs — User Manual
 
 *A [GeoEQ](https://geoeq.org) software · this manual matches version 1.0.*
 
@@ -9,7 +9,7 @@
 1. Download the Windows package from the
    [Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest).
 2. Run the installer, or unzip the portable package anywhere and run
-   `SPT Borelog.exe`.
+   `GeoEQ SPT Logs.exe`.
 3. Requirements: Windows 10 / 11, 64-bit.
 
 To try the app immediately, open **File → Open demo project** — a
@@ -103,12 +103,12 @@ What you see on screen is exactly what is exported.
 
 ## 8. Where your data lives
 
-- **Project files** default to `Documents\SPT Borelog\Projects` — the
+- **Project files** default to `Documents\GeoEQ SPT Logs\Projects` — the
   Open/Save dialogs start there. Files are plain `.sbl` (JSON), easy to
   back up, share, or sync (the folder follows OneDrive-redirected
   Documents automatically). You can of course save a project anywhere.
 - **Settings** (company identity, logo, sheet appearance) live in
-  `%APPDATA%\GeoEQ\SPT Borelog\company.json`.
+  `%APPDATA%\GeoEQ\SPT Logs\company.json`.
 - Nothing is stored in the installation folder, so uninstalling or
   updating the app never touches your projects.
 
