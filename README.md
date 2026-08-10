@@ -12,9 +12,10 @@
 
 <p align="center">
   <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.0.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
-  <img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11">
-  <img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software">
+  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11"></a>
+  <a href="#faq"><img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software"></a>
   <a href="https://github.com/geoeq/SPT-Borelogs/releases"><img src="https://img.shields.io/github/downloads/geoeq/SPT-Borelogs/total?style=for-the-badge&label=Downloads&color=5A5A5A" alt="Total downloads"></a>
+  <a href="https://github.com/geoeq/SPT-Borelogs/stargazers"><img src="https://img.shields.io/github/stars/geoeq/SPT-Borelogs?style=for-the-badge&label=Stars&color=E3A008" alt="GitHub stars"></a>
 </p>
 
 <p align="center">
@@ -154,6 +155,18 @@ the graph while printing the true value.
 
 **Will it run on macOS?**
 A macOS build is planned. Watch the Releases page.
+
+## Like it? Star and share
+
+GeoEQ SPT Logs v1.x is **free forever**. If it saves you time, two
+small things keep the project growing:
+
+- **[Star this repository](https://github.com/geoeq/SPT-Borelogs)** —
+  stars are how other engineers discover the software on GitHub.
+- **Share it with a colleague** —
+  [share on LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fgeoeq%2FSPT-Borelogs)
+  · [share on X](https://twitter.com/intent/tweet?text=Free%20SPT%20borelog%20software%20for%20geotechnical%20engineers%20%E2%80%94%20GeoEQ%20SPT%20Logs&url=https%3A%2F%2Fgithub.com%2Fgeoeq%2FSPT-Borelogs)
+  · or simply send them this page.
 
 ## Support & feature requests
 
