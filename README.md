@@ -128,9 +128,8 @@ marked required. Manifest fields:
 ## ❓ FAQ
 
 **Is GeoEQ SPT Logs really free?**
-Yes — version 1.x is free, full-featured, for commercial and personal
-use. Future major versions will add licensed features; v1 stays free
-for its users.
+Yes — version 1.x is free and full-featured, for both commercial and
+personal use.
 
 **Is this an alternative to gINT, LogPlot, or Excel borelog templates?**
 It's a lightweight, free alternative for SPT borehole logging: if your
@@ -164,6 +163,30 @@ A macOS build is planned. Watch the Releases page.
   use it — upcoming versions are planned from these discussions, so
   say what *you* want in the software.
 - 📖 Check the **[user manual](manual.md)** first for how-tos.
+
+## 📚 Citation
+
+If you use GeoEQ SPT Logs in a report, thesis, or publication, please
+cite it as:
+
+> Malo, R. C., & Qiu, T. (2026). *GeoEQ SPT Logs* (Version 1.0.0)
+> [Computer software]. GeoEQ. https://github.com/geoeq/SPT-Borelogs
+
+BibTeX:
+
+```bibtex
+@software{malo2026geoeqsptlogs,
+  author  = {Malo, Ripon Chandra and Qiu, Tong},
+  title   = {GeoEQ SPT Logs},
+  version = {1.0.0},
+  year    = {2026},
+  publisher = {GeoEQ},
+  url     = {https://github.com/geoeq/SPT-Borelogs}
+}
+```
+
+(You can also use GitHub's **"Cite this repository"** button, powered
+by [`CITATION.cff`](CITATION.cff).)
 
 ## About GeoEQ
 

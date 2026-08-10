@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use GeoEQ SPT Logs in your work, please cite it as below."
+type: software
+title: "GeoEQ SPT Logs"
+authors:
+  - family-names: "Malo"
+    given-names: "Ripon Chandra"
+  - family-names: "Qiu"
+    given-names: "Tong"
+version: "1.0.0"
+date-released: "2026-08-09"
+url: "https://geoeq.org"
+repository-code: "https://github.com/geoeq/SPT-Borelogs"
+abstract: "Free SPT borehole log software for geotechnical engineers:
+  data entry, Excel/CSV import, template-style borelog sheets and
+  multi-page PDF reports."
