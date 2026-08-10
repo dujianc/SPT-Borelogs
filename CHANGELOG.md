@@ -3,7 +3,7 @@
 All notable changes to GeoEQ SPT Logs are documented here.
 Dates use YYYY-MM-DD.
 
-## 1.0.0 — first public release
+## 1.0.0 — 2026-08-10 — first public release
 
 ### Added
 
