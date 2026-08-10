@@ -101,7 +101,18 @@ same description merge into one stratum automatically.
 
 What you see on screen is exactly what is exported.
 
-## 8. Updates
+## 8. Where your data lives
+
+- **Project files** default to `Documents\SPT Borelog\Projects` — the
+  Open/Save dialogs start there. Files are plain `.sbl` (JSON), easy to
+  back up, share, or sync (the folder follows OneDrive-redirected
+  Documents automatically). You can of course save a project anywhere.
+- **Settings** (company identity, logo, sheet appearance) live in
+  `%APPDATA%\GeoEQ\SPT Borelog\company.json`.
+- Nothing is stored in the installation folder, so uninstalling or
+  updating the app never touches your projects.
+
+## 9. Updates
 
 **Help → Check for updates** compares your version with the latest
 release. If a newer version exists you get a download link; releases
@@ -109,7 +120,7 @@ marked *required* must be installed before continuing. You can always
 download manually from the
 [Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest).
 
-## 9. Tips & FAQ
+## 10. Tips & FAQ
 
 - **My water marker didn't move** — the marker follows the number in
   the Water RL header field ("(-) 5.0" → 5.0 m below EGL).
