@@ -158,11 +158,13 @@ A macOS build is planned. Watch the Releases page.
 
 - **Found a bug?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
   with what you did, what happened, and a screenshot if possible.
-- **Want a feature?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
-  titled `Feature request: …` and tell us what you need and how you'd
-  use it — upcoming versions are planned from these discussions, so
-  say what *you* want in the software.
-- Check the **[user manual](manual.md)** first for how-tos.
+- **Want a feature?** [Start a discussion](https://github.com/geoeq/SPT-Borelogs/discussions)
+  and tell us what you need and how you'd use it — upcoming versions
+  are planned from these discussions, so say what *you* want in the
+  software. (Prefer issues? Open one titled `Feature request: …`.)
+- **Questions and how-tos** — check the **[user manual](manual.md)**
+  first, then ask in
+  [Discussions](https://github.com/geoeq/SPT-Borelogs/discussions).
 
 ## Citation
 
