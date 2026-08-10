@@ -33,3 +33,7 @@ Dates use YYYY-MM-DD.
 - Update notifications at startup (silent, offline-safe) and
   Help → Check for updates; Help → User manual.
 - Demo project (File → Open demo project) with generic sample data.
+- Windows installer (setup.exe): per-user install without admin
+  rights, Start-menu and optional desktop shortcuts, `.sbl` file
+  association (double-click a project to open it), clean uninstall.
+  A portable `.zip` is also available.
