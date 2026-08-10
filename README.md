@@ -14,6 +14,7 @@
   <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.0.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
   <img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11">
   <img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software">
+  <a href="https://github.com/geoeq/SPT-Borelogs/releases"><img src="https://img.shields.io/github/downloads/geoeq/SPT-Borelogs/total?style=for-the-badge&label=Downloads&color=5A5A5A" alt="Total downloads"></a>
 </p>
 
 <p align="center">
