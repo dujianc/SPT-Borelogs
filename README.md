@@ -1,92 +1,181 @@
-# GeoEQ SPT Logs
+<p align="center">
+  <img src="assets/header.svg" alt="GeoEQ SPT Logs — free SPT borelog software for geotechnical engineers" width="100%">
+</p>
 
-Professional SPT borehole log software for geotechnical engineers —
-enter or import field data, get clean template-style borelog sheets and
-print-ready PDFs in minutes.
+<h1 align="center">GeoEQ SPT Logs — Free SPT Borelog Software</h1>
 
-**GeoEQ SPT Logs** is part of **[GeoEQ](https://geoeq.org)** — a
-geotechnical software studio built on the `geoeq` Python ecosystem.
+<p align="center">
+  Create professional <b>SPT borehole logs</b> in minutes — enter or import
+  field data, get template-quality <b>geotechnical borelog</b> sheets and
+  print-ready PDF reports. Free for Windows.
+</p>
 
-> **This repository distributes ready-to-run builds only.**
-> Download the latest version from the
-> **[Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest)**
-> · Read the **[user manual](manual.md)**.
+<p align="center">
+  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.0.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
+  <img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11">
+  <img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software">
+</p>
+
+<p align="center">
+  <a href="#-download--install">Download</a> ·
+  <a href="manual.md">User manual</a> ·
+  <a href="#-screenshots">Screenshots</a> ·
+  <a href="#-faq">FAQ</a> ·
+  <a href="#-support--feature-requests">Support</a>
+</p>
 
 ---
 
-## Download & install
+## Why GeoEQ SPT Logs?
 
-1. Open the **[latest release](https://github.com/geoeq/SPT-Borelogs/releases/latest)**.
-2. Download the Windows package (`GeoEQ-SPT-Logs-<version>-setup.exe` or
-   the portable `.zip`).
-3. Run the installer (or unzip anywhere and run `GeoEQ SPT Logs.exe`).
+Most geotechnical teams still draw borehole logs in Excel templates —
+slow, error-prone, and painful to keep consistent across a project.
+Commercial borelog software is powerful but expensive and heavy.
+**GeoEQ SPT Logs** sits in the sweet spot: a free, fast, purpose-built
+SPT borelog program that produces clean, standardized boring log sheets
+— and imports the Excel files you already have.
 
-**Requirements:** Windows 10 / 11, 64-bit. No other software needed.
+- ✅ **Free** (version 1.x, full-featured — see [FAQ](#-faq))
+- ✅ **Familiar output** — template-style borelog sheets engineers and
+  reviewers recognize instantly
+- ✅ **Your data stays yours** — plain JSON project files on your disk,
+  works fully offline
 
-## What it does
+## 📷 Screenshots
 
-- **Project explorer** — one file can hold several projects, each with
-  its own boreholes. Right-click anything for actions (settings,
-  import, rename, export, delete).
-- **Borelog editor** — SPT & samples table (depth, 15 cm blow counts or
-  a direct N-value, sample ID, D/UD type, lab results), strata table
-  with 7 colored soil-type symbols (Clay, Sand, Silt, Gravel, Fill,
-  Organic, Rock), dual X/Y + Lat/Long coordinates, water-table marker
-  styles.
-- **Live drawn sheet** — template-style borelog with ruler depth scale,
-  bold USCS symbols, N-value profile, groundwater marker, automatic
-  pagination (~30 m per sheet) and legend. What you see is what prints.
-- **Excel / CSV import** — the office BH-xx template imports in one
-  click; any other spreadsheet opens a column-assignment window
-  (auto-guessed, you confirm) before the data enters the tables.
-- **PDF export** — one borelog, or a whole project (every borehole) as
-  a single multi-page A4 PDF.
-- **Your branding** — company name, address and logo, four header
-  styles, custom accent colour; set once, applied to every sheet.
+**Live borelog editor** — type in the tables on the left, the sheet
+redraws instantly on the right:
 
-## Getting started
+<p align="center">
+  <img src="assets/screenshot-app.png" alt="SPT borelog software — live borehole log editor with SPT N-value graph" width="90%">
+</p>
 
-1. Start the app and open **File → Open demo project** to explore a
-   ready-made borelog.
-2. **File → Company settings** — enter your company name, address and
-   logo (drawn on every sheet).
-3. Right-click the project in the explorer → **Add borehole** (or
-   **Import borehole from Excel / CSV**) and start entering data — the
-   sheet redraws live.
-4. Right-click the project → **Export project PDF** for a single PDF of
-   all boreholes.
+**Import any spreadsheet** — non-standard headings are matched with an
+assignment window (auto-guessed, you confirm):
 
-## Updates
+<p align="center">
+  <img src="assets/screenshot-mapping.png" alt="Import borelog data from Excel or CSV with column mapping" width="70%">
+</p>
 
-The app checks this repository for new versions
-([`updates/latest.json`](updates/latest.json)). When a newer release is
-available you are notified at startup with what the update brings; some
-releases can be marked **required**, in which case the app asks you to
-update before continuing (enforced only when online — field laptops
-without internet keep working). You can always download the newest
-build manually from the Releases page.
+**Print-ready sheets** — A4 borehole log with soil symbols, USCS
+classification, groundwater level, and the field SPT N-value profile:
 
-**Manifest fields** (`updates/latest.json`):
+<p align="center">
+  <img src="assets/screenshot-sheet.png" alt="Geotechnical borehole log PDF with soil strata symbols and SPT N-value curve" width="75%">
+</p>
+
+## ⭐ Features
+
+- **SPT borehole log sheets** drawn live: ruler depth scale, sample
+  symbols (split spoon / Shelby tube), blow counts with computed
+  **SPT N-value**, refusal handling, and the N-vs-depth profile graph
+- **Soil strata symbols** for Clay, Sand, Silt, Gravel, Fill, Organic
+  and Rock — colored, textured, with **USCS group symbols** (ML, CL,
+  SW…) printed bold in descriptions
+- **Excel & CSV import**: office borelog templates import in one click;
+  any other spreadsheet goes through a smart column-mapping dialog —
+  even files that only carry N-values
+- **Multi-project files**: one file holds several site-investigation
+  projects, each with its own boreholes, client, and settings
+- **One-click project PDF**: every borehole of a project exported into
+  a single multi-page A4 report, in order
+- **Your branding**: company name, address and logo, four header
+  styles, custom accent color — set once, drawn on every sheet
+- **Dual coordinates** (X/Y and Lat/Long), selectable groundwater
+  marker styles, water-table level line across the log
+- **Offline-first**: no account, no cloud dependency; automatic update
+  notifications when you're online
+
+## ⬇️ Download & install
+
+1. Grab the latest Windows package from the
+   **[Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest)**
+   (`GeoEQ-SPT-Logs-<version>-setup.exe` or the portable `.zip`).
+2. Run the installer, or unzip anywhere and start `GeoEQ SPT Logs.exe`.
+3. Requirements: Windows 10 / 11, 64-bit. Nothing else to install.
+
+> New here? Open **File → Open demo project** for a complete example
+> borelog you can edit and export straight away.
+
+## 🚀 Quick start
+
+1. **File → Company settings** — your company name, address, and logo
+   (drawn on every sheet).
+2. Right-click the project in the explorer → **Add borehole**, or
+   **Import borehole from Excel / CSV**.
+3. Enter depths, blow counts, samples, and strata — the sheet updates
+   live.
+4. Right-click the project → **Export project PDF** for the full
+   report.
+
+Full guide: **[User manual](manual.md)**.
+
+## 🔄 Updates
+
+The app checks [`updates/latest.json`](updates/latest.json) at startup
+(silently, never blocking — offline machines are unaffected) and shows
+a notice with what the new version brings. Critical releases can be
+marked required. Manifest fields:
 
 | Field | Meaning |
 |---|---|
 | `version` | Latest released version — older builds show an update notice |
-| `minimum_version` | Builds older than this must update to continue |
+| `minimum_version` | Builds older than this must update to continue (online only) |
 | `download_url` | Where the notice's Download button points |
 | `notes` | One-line "what you get" shown in the update notice |
-| `promo` *(optional)* | `{id, text, url, menu_text}` — shows a dismissible in-app banner and a Help-menu entry; omit for none. Each `id` is shown until dismissed, then never again |
+| `promo` *(optional)* | `{id, text, url, menu_text}` — dismissible in-app banner + Help-menu entry; omit for none |
 
-## Manual & support
+## ❓ FAQ
 
-- **[User manual](manual.md)** — full guide, also reachable inside the
-  app via **Help → User manual**.
-- Found a problem or have a request? Open an
-  [issue](https://github.com/geoeq/SPT-Borelogs/issues).
-- Web: **[geoeq.org](https://geoeq.org)**
+**Is GeoEQ SPT Logs really free?**
+Yes — version 1.x is free, full-featured, for commercial and personal
+use. Future major versions will add licensed features; v1 stays free
+for its users.
 
-## License
+**Is this an alternative to gINT, LogPlot, or Excel borelog templates?**
+It's a lightweight, free alternative for SPT borehole logging: if your
+deliverable is a clean SPT boring log with soil strata, lab values, and
+the N-value curve, GeoEQ SPT Logs does it with far less setup.
 
-© GeoEQ (https://geoeq.org). All rights reserved.
-This repository contains compiled builds for end users; the source code
-is not published here. Redistribution of the binaries without
-permission is not allowed.
+**Can I import my existing Excel borelog data?**
+Yes. Standard office templates import in one click; any other
+spreadsheet (or CSV) opens a column-assignment window that maps your
+headings — "Depth", "SPT N", "Dec", anything — to the right fields.
+
+**Does it work offline?**
+Completely. Projects are plain files on your disk
+(`Documents\GeoEQ SPT Logs\Projects`); no account or internet needed.
+
+**What is the SPT N-value on the log?**
+The Standard Penetration Test blow count: the sum of the 2nd and 3rd
+150 mm increments. The software computes it from your blow counts (or
+accepts a direct N), plots it against depth, and caps refusal at 50 on
+the graph while printing the true value.
+
+**Will it run on macOS?**
+A macOS build is planned. Watch the Releases page.
+
+## 💬 Support & feature requests
+
+- 🐞 **Found a bug?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
+  with what you did, what happened, and a screenshot if possible.
+- 💡 **Want a feature?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
+  titled `Feature request: …` and tell us what you need and how you'd
+  use it — upcoming versions are planned from these discussions, so
+  say what *you* want in the software.
+- 📖 Check the **[user manual](manual.md)** first for how-tos.
+
+## About GeoEQ
+
+**[GeoEQ](https://geoeq.org)** is a geotechnical software studio built
+on the `geoeq` Python ecosystem — engineering tools that are fast,
+honest about their methods, and pleasant to use. GeoEQ SPT Logs is the
+first desktop release.
+
+---
+
+<p align="center">
+© GeoEQ · <a href="https://geoeq.org">geoeq.org</a> · This repository
+distributes compiled builds; the source code is not published here.
+Redistribution of the binaries without permission is not allowed.
+</p>
