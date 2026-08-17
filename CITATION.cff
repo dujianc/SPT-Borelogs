@@ -7,8 +7,8 @@ authors:
     given-names: "Ripon Chandra"
   - family-names: "Qiu"
     given-names: "Tong"
-version: "1.0.0"
-date-released: "2026-08-09"
+version: "1.1.0"
+date-released: "2026-08-17"
 url: "https://geoeq.org"
 repository-code: "https://github.com/geoeq/SPT-Borelogs"
 abstract: "Free SPT borehole log software for geotechnical engineers:

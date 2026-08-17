@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.0.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
+  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.1.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
   <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11"></a>
   <a href="#faq"><img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software"></a>
   <a href="https://github.com/geoeq/SPT-Borelogs/releases"><img src="https://img.shields.io/github/downloads/geoeq/SPT-Borelogs/total?style=for-the-badge&label=Downloads&color=5A5A5A" alt="Total downloads"></a>
@@ -151,8 +151,10 @@ Completely. Projects are plain files on your disk
 **What is the SPT N-value on the log?**
 The Standard Penetration Test blow count: the sum of the 2nd and 3rd
 150 mm increments. The software computes it from your blow counts (or
-accepts a direct N), plots it against depth, and caps refusal at 50 on
-the graph while printing the true value.
+accepts a direct N) and plots it against depth. Where the driller hit
+refusal, type the field notation — `50/75` for 50 blows over 75 mm — and
+the sheet prints it instead of inventing a number; the profile breaks to
+a refusal marker rather than drawing a point as if the test finished.
 
 **Will it run on macOS?**
 A macOS build is planned. Watch the Releases page.
@@ -187,7 +189,7 @@ small things keep the project growing:
 If you use GeoEQ SPT Logs in a report, thesis, or publication, please
 cite it as:
 
-> Malo, R. C., & Qiu, T. (2026). *GeoEQ SPT Logs* (Version 1.0.0)
+> Malo, R. C., & Qiu, T. (2026). *GeoEQ SPT Logs* (Version 1.1.0)
 > [Computer software]. GeoEQ. https://github.com/geoeq/SPT-Borelogs
 
 BibTeX:
@@ -196,7 +198,7 @@ BibTeX:
 @software{malo2026geoeqsptlogs,
   author  = {Malo, Ripon Chandra and Qiu, Tong},
   title   = {GeoEQ SPT Logs},
-  version = {1.0.0},
+  version = {1.1.0},
   year    = {2026},
   publisher = {GeoEQ},
   url     = {https://github.com/geoeq/SPT-Borelogs}
