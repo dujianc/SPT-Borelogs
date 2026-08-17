@@ -171,12 +171,13 @@ small things keep the project growing:
 
 ## Support & feature requests
 
-- **Found a bug?** [Open an issue](https://github.com/geoeq/SPT-Borelogs/issues/new)
+- **Found a bug?** [Start a discussion](https://github.com/geoeq/SPT-Borelogs/discussions/new?category=q-a)
   with what you did, what happened, and a screenshot if possible.
-- **Want a feature?** [Start a discussion](https://github.com/geoeq/SPT-Borelogs/discussions)
+- **Want a feature?** [Start a discussion](https://github.com/geoeq/SPT-Borelogs/discussions/new?category=ideas)
   and tell us what you need and how you'd use it — upcoming versions
   are planned from these discussions, so say what *you* want in the
-  software. (Prefer issues? Open one titled `Feature request: …`.)
+  software. Rock coring (TCR/SCR/RQD), imperial units and refusal
+  recording all arrived this way.
 - **Questions and how-tos** — check the **[user manual](manual.md)**
   first, then ask in
   [Discussions](https://github.com/geoeq/SPT-Borelogs/discussions).

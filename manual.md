@@ -1,6 +1,6 @@
 # GeoEQ SPT Logs — User Manual
 
-*A [GeoEQ](https://geoeq.org) software · this manual matches version 1.0.*
+*A [GeoEQ](https://geoeq.org) software · this manual matches version 1.1.*
 
 ---
 
@@ -43,6 +43,15 @@ of every project:
   or Boxed logo card
 - **Accent colour** (title, rules, borehole number)
 - Light horizontal row lines on/off
+- **Sheet title** — the wording printed at the top of every sheet:
+  BORELOG (default), BORING LOG, BOREHOLE LOG, BORE LOG, SOIL BORING
+  LOG, LOG OF BORING, or type your own. *Boring log* is the usual term
+  in the United States, *borehole log* in the UK and internationally.
+  The body of the sheet follows your choice, so a sheet headed BORING
+  LOG says "Boring No:" and "End of boring".
+- **Water row label** — Borehole Water RL (default), Water Level, Depth
+  to Water, Groundwater Level, Water Table, or your own. The unit is
+  added automatically.
 
 ## 4. Project settings
 
@@ -54,6 +63,24 @@ Double-click a project (or right-click → Project settings):
   both pairs).
 - **Water table marker**: classic symbol + level line (default),
   classic only, filled triangle, triangle + GWT label, or droplet.
+- **Units**: Metric (default, m/kPa/mm) or Imperial (ft/tsf/in). This
+  changes the **labels** on the input tables and the sheet — values are
+  never converted, so enter them in the unit the project uses. Set per
+  project, so one office can run a metric job and an imperial job side
+  by side.
+- **Test interval / first depth** — used by **Generate depths**, which
+  fills the depth column down to the borehole depth and leaves rows you
+  have already typed alone. Default 1.5 m starting at 1.5 m; set the
+  first depth to 0 to start at ground level.
+- **Depth ruler interval** — Auto (follows the test interval) or a
+  fixed spacing.
+- **N-value graph scale** — Fixed (0–70 by default, or your own full
+  scale) or Auto-fit to the data.
+- **Values past the scale** — Clamp at 50 (version 1.0 behaviour,
+  default), Mark as refusal at the edge, or Extend the scale to fit.
+- **Refusal shown as** — the notation used in the N column: as recorded
+  (`50/75`, default), `>50`, `Ref`, or `R`. Note `R` is also the Rock
+  stratum symbol, so it can read two ways on a sheet containing rock.
 - About — free notes stored in the file.
 
 ## 5. Entering borelog data
@@ -112,7 +139,110 @@ What you see on screen is exactly what is exported.
 - Nothing is stored in the installation folder, so uninstalling or
   updating the app never touches your projects.
 
-## 9. Updates
+## 9. The project file format
+
+A `.sbl` file is plain UTF-8 JSON. It is documented here so you can read
+your own data — for a QA script, a bulk check across boreholes, or to
+hand a profile to the [`geoeq`](https://geoeq.org) Python package —
+without exporting anything first.
+
+### Shape
+
+```jsonc
+{
+  "version": 2,
+  "projects": [
+    {
+      "id": "b5191c21",
+      "name": "ABC Site Investigation",
+      "client": "ABC Development LLC",
+      "location": "Salt Lake City, Utah, USA",
+      "about": "…",
+
+      // presentation choices, all optional
+      "units": "metric",            // or "imperial" — labels only, never a conversion
+      "coord_display": "both",      // "xy" | "latlong" | "both"
+      "water_marker": "classic_line",
+      "spt_interval": 1.5,          // test spacing used by Generate depths
+      "spt_start": 1.5,             // first test depth
+      "ruler_interval": 0.0,        // 0 = Auto (follows spt_interval)
+      "n_scale": "fixed",           // or "auto"
+      "n_scale_max": 70.0,
+      "n_overflow": "clamp",        // "clamp" | "refusal" | "extend"
+      "refusal_text": "asrec",      // "asrec" | "gt" | "Ref" | "R"
+
+      "boreholes": [
+        {
+          "id": "9b1aed49",
+          "name": "BH-02",
+          "depth": 15.0,            // total depth
+          "gwt": 2.5,               // groundwater depth below EGL
+          "borelog": {
+            "header": {
+              "coord_x": "424715", "coord_y": "4512390",
+              "coord_lat": "40.7615", "coord_long": "-111.8896",
+              "date_started": "2026-05-15", "date_completed": "2026-05-16",
+              "method": "Hollow Stem Auger", "water_rl": "(-) 2.5",
+              "dia": "100", "standard": "ASTM D-2487 & D-2488",
+              "egl_rl": 0.0
+            },
+            "page_depth": 15.0,     // depth printed per sheet
+            "spt": [ /* rows, see below */ ],
+            "strata": [ /* rows, see below */ ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Row layout
+
+Table rows are arrays of strings, in column order. Empty cells are `""`.
+
+**`spt` — 12 cells:**
+
+| # | Cell | Notes |
+|---|---|---|
+| 0 | depth | |
+| 1–3 | 15 cm increments, 1st / 2nd / 3rd | `"50/75"` means **refusal**: 50 blows for 75 mm |
+| 4 | N | optional; blank means N is taken as 2nd + 3rd |
+| 5 | sample ID | |
+| 6 | sample type | `D` or `UD` |
+| 7–11 | fines %, LL, PI, qu, moisture % | |
+
+**`strata` — 3 cells:** bottom depth, description, soil letter
+(`C` clay, `S` sand, `M` silt, `G` gravel, `F` fill, `O` organic,
+`R` rock).
+
+### Reading a file
+
+```python
+import json
+
+with open("ABC Site Investigation.sbl", encoding="utf-8") as f:
+    doc = json.load(f)
+
+for project in doc["projects"]:
+    for bh in project["boreholes"]:
+        print(f"\n{bh['name']} — {bh['depth']} m, water {bh['gwt']} m")
+        for row in bh["borelog"]["spt"]:
+            depth, b1, b2, b3, n = row[0], row[1], row[2], row[3], row[4]
+            if "/" in b3:                       # refusal, e.g. 50/75
+                print(f"  {depth:>6}  refusal {b3}")
+            elif n or (b2 and b3):
+                print(f"  {depth:>6}  N = {n or int(b2) + int(b3)}")
+```
+
+### Compatibility
+
+New fields are **added**, never repurposed, and every one is optional —
+a reader that ignores what it does not recognise keeps working across
+versions. Files written by earlier versions open unchanged and are
+upgraded in memory when saved.
+
+## 10. Updates
 
 **Help → Check for updates** compares your version with the latest
 release. If a newer version exists you get a download link; releases
@@ -120,15 +250,22 @@ marked *required* must be installed before continuing. You can always
 download manually from the
 [Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest).
 
-## 10. Tips & FAQ
+## 11. Tips & FAQ
 
 - **My water marker didn't move** — the marker follows the number in
   the Water RL header field ("(-) 5.0" → 5.0 m below EGL).
 - **Two samples at one depth** (a D and a UD): the sheet shows a single
   merged row — the UD identity with the SPT blows and combined lab
   values.
-- **N greater than 50** plots capped at 50 (refusal) on the 0–70 axis;
-  the printed value keeps the real number.
+- **Refusal in cemented ground** — type the driller's notation straight
+  into the increment cell: `50/75` means 50 blows for 75 mm. The sheet
+  prints `8-15-50/75`, the N column shows the notation instead of a
+  number nobody measured, and the profile breaks to a refusal marker at
+  full scale rather than drawing a point as if the test finished.
+- **N greater than the scale** plots capped at 50 by default, as in
+  version 1.0; Project settings → *Values past the scale* changes that
+  to a refusal marker or an extended scale. The printed value always
+  keeps the real number.
 - **Old files**: project files from earlier versions open unchanged —
   they are upgraded in memory and saved in the new format.
 
