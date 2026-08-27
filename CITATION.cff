@@ -7,10 +7,10 @@ authors:
     given-names: "Ripon Chandra"
   - family-names: "Qiu"
     given-names: "Tong"
-version: "1.1.0"
-date-released: "2026-08-17"
+version: "1.2.0"
+date-released: "2026-08-26"
 url: "https://geoeq.org"
 repository-code: "https://github.com/geoeq/SPT-Borelogs"
-abstract: "Free SPT borehole log software for geotechnical engineers:
-  data entry, Excel/CSV import, template-style borelog sheets and
-  multi-page PDF reports."
+abstract: "Free borehole log software for geotechnical engineers: SPT
+  data entry, rock core logging with TCR, SCR and RQD, Excel/CSV import,
+  template-style borelog sheets and multi-page PDF reports."

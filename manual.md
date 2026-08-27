@@ -1,6 +1,6 @@
 # GeoEQ SPT Logs — User Manual
 
-*A [GeoEQ](https://geoeq.org) software · this manual matches version 1.1.*
+*A [GeoEQ](https://geoeq.org) software · this manual matches version 1.2.*
 
 ---
 
@@ -85,7 +85,7 @@ Double-click a project (or right-click → Project settings):
 
 ## 5. Entering borelog data
 
-Open a borehole (double-click). Three input tabs:
+Open a borehole (double-click). Four input tabs:
 
 - **SPT & samples** — one row per test/sample: depth, the three 15 cm
   blow counts (N is computed as 2nd + 3rd), or type a direct **N**
@@ -98,6 +98,10 @@ Open a borehole (double-click). Three input tabs:
   description ("Sandy SILT" → M) and sets the colored symbol column.
   A USCS symbol at the end of a description ("…SILT,ML") is printed
   bold automatically.
+- **Rock core** — one row per core run, below refusal: run top and
+  bottom, TCR %, SCR %, RQD %, core size (NQ, HQ…) and fractures per
+  metre. Leave the tab empty for a soil-only borehole and the sheet
+  is drawn exactly as before. See section 6.
 - **Header** — per-borehole facts: X/Y and Lat/Long coordinates, dates,
   boring method, water RL (e.g. `(-) 5.0` places the water marker at
   5.0 m), boring dia, classification standard, EGL reduced level.
@@ -105,7 +109,60 @@ Open a borehole (double-click). Three input tabs:
 The sheet on the right redraws with every edit; use the Sheet spinner
 for multi-page logs (default ~30 m per sheet).
 
-## 6. Importing data
+## 6. Rock coring
+
+When the sampler refuses, the driller pulls the split spoon and picks up
+a **core barrel**. Below that depth there are no blow counts: the unit of
+measurement is the **core run**, and three percentages measured off the
+recovered core.
+
+| | Counts | |
+|---|---|---|
+| **TCR** | everything recovered, rubble included | total core recovery |
+| **SCR** | full-diameter solid cylinders only | solid core recovery |
+| **RQD** | sound pieces 100 mm or longer | rock quality designation |
+
+Enter them in the **Rock core** tab, one row per run. Run number, run
+length and the rock quality word are worked out for you.
+
+### The sheet follows the data
+
+There is no rock/soil setting to choose. What you enter decides what is
+drawn:
+
+| SPT rows | Core runs | Sheet |
+|---|---|---|
+| yes | none | the ordinary borelog, unchanged |
+| yes | yes | N-value graph above the rockhead, core recovery below it |
+| none | yes | a rock sheet: the lab columns carry the run figures |
+
+The **rockhead** is the top of your first core run, so the transition
+line needs no setting either.
+
+### Reading the recovery bar
+
+RQD can never exceed SCR, which can never exceed TCR, so one bar shows
+all three: the palest block is TCR, the middle SCR, the solid block RQD.
+The colour is the run's rock quality — red very poor, orange poor,
+yellow fair, light green good, green excellent — so a weathered zone is
+visible before you read a number. The RQD figure is printed in the bar.
+
+| RQD % | Rock quality |
+|---|---|
+| 0 – 25 | Very poor |
+| 25 – 50 | Poor |
+| 50 – 75 | Fair |
+| 75 – 90 | Good |
+| 90 – 100 | Excellent |
+
+### Checks
+
+Because the three nest, a figure out of order is a typing error, and it
+is reported rather than silently corrected — as is a run bottom above
+its top, a run that starts above the end of the one before it, and any
+value outside 0–100. Look at the badges under the sheet.
+
+## 7. Importing data
 
 **From the office BH-xx Excel template** — right-click a project →
 Import borehole: the borehole is created with header, samples, blows
@@ -119,7 +176,7 @@ and the rows are inserted. Files with only an N column (no blow counts)
 work — the N goes into the direct-N column. Consecutive rows with the
 same description merge into one stratum automatically.
 
-## 7. Exporting PDFs
+## 8. Exporting PDFs
 
 - **One borehole**: the Export PDF button in its borelog tab (or
   right-click → Export PDF). Multi-sheet logs export all pages.
@@ -128,7 +185,7 @@ same description merge into one stratum automatically.
 
 What you see on screen is exactly what is exported.
 
-## 8. Where your data lives
+## 9. Where your data lives
 
 - **Project files** default to `Documents\GeoEQ SPT Logs\Projects` — the
   Open/Save dialogs start there. Files are plain `.sbl` (JSON), easy to
@@ -139,7 +196,7 @@ What you see on screen is exactly what is exported.
 - Nothing is stored in the installation folder, so uninstalling or
   updating the app never touches your projects.
 
-## 9. The project file format
+## 10. The project file format
 
 A `.sbl` file is plain UTF-8 JSON. It is documented here so you can read
 your own data — for a QA script, a bulk check across boreholes, or to
@@ -188,7 +245,8 @@ without exporting anything first.
             },
             "page_depth": 15.0,     // depth printed per sheet
             "spt": [ /* rows, see below */ ],
-            "strata": [ /* rows, see below */ ]
+            "strata": [ /* rows, see below */ ],
+            "core": [ /* core runs, see below; omitted if none */ ]
           }
         }
       ]
@@ -216,6 +274,10 @@ Table rows are arrays of strings, in column order. Empty cells are `""`.
 (`C` clay, `S` sand, `M` silt, `G` gravel, `F` fill, `O` organic,
 `R` rock).
 
+**`core` — 7 cells** (present only where there is coring): run top, run
+bottom, TCR %, SCR %, RQD %, core size, fractures per metre. Run number,
+run length and the rock quality word are derived, not stored.
+
 ### Reading a file
 
 ```python
@@ -242,7 +304,7 @@ a reader that ignores what it does not recognise keeps working across
 versions. Files written by earlier versions open unchanged and are
 upgraded in memory when saved.
 
-## 10. Updates
+## 11. Updates
 
 **Help → Check for updates** compares your version with the latest
 release. If a newer version exists you get a download link; releases
@@ -250,7 +312,7 @@ marked *required* must be installed before continuing. You can always
 download manually from the
 [Releases page](https://github.com/geoeq/SPT-Borelogs/releases/latest).
 
-## 11. Tips & FAQ
+## 12. Tips & FAQ
 
 - **My water marker didn't move** — the marker follows the number in
   the Water RL header field ("(-) 5.0" → 5.0 m below EGL).

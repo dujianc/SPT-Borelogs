@@ -3,6 +3,51 @@
 All notable changes to GeoEQ SPT Logs are documented here.
 Dates use YYYY-MM-DD.
 
+## 1.2.0 — 2026-08-26
+
+Rock coring. Refusal is where the driller pulls the split spoon and
+picks up a core barrel, and until now the log stopped there. Free update
+for every 1.x user; files from 1.0 and 1.1 open unchanged.
+
+### Added
+
+- **Rock core tab.** One row per core run: run top and bottom, TCR %,
+  SCR %, RQD %, core size and fractures per metre. Run number, run
+  length and the rock quality word (very poor … excellent) are worked
+  out for you.
+- **The sheet follows the data, with nothing to set.** No core runs
+  draws the sheet you already know. Core runs beside SPT rows put the
+  N-value graph above the rockhead and core recovery below it. Core runs
+  with no SPT at all draw a rock sheet, the lab columns carrying the run
+  figures. The rockhead is the top of your first run.
+- **One bar for all three figures.** RQD can never exceed SCR, which can
+  never exceed TCR, so a single nested bar shows them all — and takes
+  the colour of the run's rock quality, red very poor through green
+  excellent, so a weathered zone is visible before a number is read. The
+  colours differ in lightness as well as hue, so the scale still reads
+  photocopied.
+- **Figures checked against each other.** SCR above TCR, or RQD above
+  SCR, is a typing error and is reported. So is a run bottom above its
+  top, a run starting above the end of the one before it, and any value
+  outside 0–100.
+- The `.sbl` format gains an optional `core` list, documented in the
+  manual. It is written only where there is coring.
+
+### Fixed
+
+- On a cored borehole with no SPT tests, the depth ruler followed the
+  SPT test interval — an interval at which nothing had been sampled. It
+  now follows the core run length, so ticks land on run boundaries.
+- Core run boundaries no longer cross the thickness, description and
+  symbol columns, which describe the stratum rather than the run.
+
+### Notes
+
+- A borehole with no core runs is drawn exactly as 1.1 drew it, to the
+  pixel.
+- Rock quality bands follow Deere: 0–25 very poor, 25–50 poor, 50–75
+  fair, 75–90 good, 90–100 excellent.
+
 ## 1.1.0 — 2026-08-17
 
 Recording what the field actually reports, and letting each office use

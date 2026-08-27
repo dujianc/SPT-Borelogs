@@ -5,13 +5,14 @@
 <h1 align="center">GeoEQ SPT Logs — Free SPT Borelog Software</h1>
 
 <p align="center">
-  Create professional <b>SPT borehole logs</b> in minutes — enter or import
-  field data, get template-quality <b>geotechnical borelog</b> sheets and
-  print-ready PDF reports. Free for Windows.
+  Create professional <b>SPT borehole logs</b> and <b>rock core logs</b> in
+  minutes — enter or import field data, get template-quality
+  <b>geotechnical borelog</b> sheets with <b>TCR, SCR and RQD</b> and
+  print-ready PDF reports. Free borehole logging software for Windows.
 </p>
 
 <p align="center">
-  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.1.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
+  <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Download-v1.2.0-1F4E9C?style=for-the-badge" alt="Download GeoEQ SPT Logs"></a>
   <a href="https://github.com/geoeq/SPT-Borelogs/releases/latest"><img src="https://img.shields.io/badge/Windows%2010%2F11-64--bit-0078D6?style=for-the-badge" alt="Windows 10 and 11"></a>
   <a href="#faq"><img src="https://img.shields.io/badge/v1.x-Free-2E7D32?style=for-the-badge" alt="Free borelog software"></a>
   <a href="https://github.com/geoeq/SPT-Borelogs/releases"><img src="https://img.shields.io/github/downloads/geoeq/SPT-Borelogs/total?style=for-the-badge&label=Downloads&color=5A5A5A" alt="Total downloads"></a>
@@ -35,10 +36,12 @@ Most geotechnical teams still draw borehole logs in Excel templates —
 slow, error-prone, and painful to keep consistent across a project.
 Commercial borelog software is powerful but expensive and heavy.
 **GeoEQ SPT Logs** sits in the sweet spot: a free, fast, purpose-built
-SPT borelog program that produces clean, standardized boring log sheets
-— and imports the Excel files you already have.
+borehole logging program that produces clean, standardized boring log
+sheets — and imports the Excel files you already have.
 
 - ✅ **Free** (version 1.x, full-featured — see [FAQ](#faq))
+- ✅ **Soil and rock in one log** — SPT down to refusal, then core runs
+  with **TCR, SCR and RQD**, on the same continuous sheet
 - ✅ **Familiar output** — template-style borelog sheets engineers and
   reviewers recognize instantly
 - ✅ **Your data stays yours** — plain JSON project files on your disk,
@@ -51,6 +54,21 @@ redraws instantly on the right:
 
 <p align="center">
   <img src="assets/screenshot-app.png" alt="SPT borelog software — live borehole log editor with SPT N-value graph" width="90%">
+</p>
+
+**Rock coring** — enter core runs and the sheet continues into rock by
+itself: the N-value graph becomes core recovery, coloured by rock
+quality:
+
+<p align="center">
+  <img src="assets/screenshot-rock-core.png" alt="Rock core logging software — TCR SCR RQD core run table with RQD bar chart on the borehole log" width="90%">
+</p>
+
+**Rock-only boreholes** — no SPT rows at all, so the columns carry the
+core-run figures instead:
+
+<p align="center">
+  <img src="assets/screenshot-rock-sheet.png" alt="Rock core log with TCR, SCR, RQD, core size, fractures per metre and rock quality" width="90%">
 </p>
 
 **Import any spreadsheet** — non-standard headings are matched with an
@@ -72,6 +90,14 @@ classification, groundwater level, and the field SPT N-value profile:
 - **SPT borehole log sheets** drawn live: ruler depth scale, sample
   symbols (split spoon / Shelby tube), blow counts with computed
   **SPT N-value**, refusal handling, and the N-vs-depth profile graph
+- **Rock core logging — TCR, SCR and RQD**: one row per core run, drawn
+  as a single nested recovery bar coloured by **rock quality**
+  (Deere: very poor → excellent). Core size, fractures per metre and run
+  length included. Figures are checked against each other, so an RQD
+  above its SCR is reported rather than silently accepted
+- **Soil and rock on one continuous log**: enter core runs and the sheet
+  follows your data — no mode to switch. SPT above the rockhead, core
+  recovery below it; a borehole with no SPT at all draws as a rock sheet
 - **Soil strata symbols** for Clay, Sand, Silt, Gravel, Fill, Organic
   and Rock — colored, textured, with **USCS group symbols** (ML, CL,
   SW…) printed bold in descriptions
@@ -107,7 +133,8 @@ classification, groundwater level, and the field SPT N-value profile:
 2. Right-click the project in the explorer → **Add borehole**, or
    **Import borehole from Excel / CSV**.
 3. Enter depths, blow counts, samples, and strata — the sheet updates
-   live.
+   live. Cored the hole? Put the runs in the **Rock core** tab and the
+   sheet continues into rock on its own.
 4. Right-click the project → **Export project PDF** for the full
    report.
 
@@ -135,9 +162,50 @@ Yes — version 1.x is free and full-featured, for both commercial and
 personal use.
 
 **Is this an alternative to gINT, LogPlot, or Excel borelog templates?**
-It's a lightweight, free alternative for SPT borehole logging: if your
-deliverable is a clean SPT boring log with soil strata, lab values, and
-the N-value curve, GeoEQ SPT Logs does it with far less setup.
+It's a lightweight, free alternative for borehole logging: if your
+deliverable is a clean boring log with soil strata, lab values, the
+N-value curve and rock core recovery, GeoEQ SPT Logs does it with far
+less setup. Bentley placed gINT in Support Discontinued status in
+January 2026, so if you are looking for somewhere to move, this is a
+free place to start.
+
+**Can it log rock cores?**
+Yes, since version 1.2. Enter one row per core run — run top and bottom,
+TCR %, SCR %, RQD %, core size and fractures per metre — and the sheet
+draws the cored interval for you. There is no rock/soil mode to choose:
+a borehole with SPT rows and core runs draws both on one continuous log,
+and a borehole with only core runs draws as a rock sheet.
+
+**What is RQD?**
+Rock Quality Designation, proposed by Deere in 1964. For each core run
+it is the combined length of intact, sound core pieces **100 mm (4 in)
+or longer**, divided by the length of the run, as a percentage. It is
+the figure that drives design, and it classifies rock like this:
+
+| RQD % | Rock quality |
+|---|---|
+| 0 – 25 | Very poor |
+| 25 – 50 | Poor |
+| 50 – 75 | Fair |
+| 75 – 90 | Good |
+| 90 – 100 | Excellent |
+
+GeoEQ SPT Logs colours the recovery bar by this scale — red very poor
+through green excellent — so a weathered zone is visible before you read
+a number.
+
+**What is the difference between TCR, SCR and RQD?**
+All three are the same fraction — recovered length ÷ run length — with a
+progressively stricter definition of what counts:
+
+- **TCR**, total core recovery: everything that came out of the barrel,
+  rubble and fragments included.
+- **SCR**, solid core recovery: only full-diameter solid cylinders.
+- **RQD**: only sound pieces 100 mm or longer.
+
+So **RQD ≤ SCR ≤ TCR**, always. The software uses that rule twice: it
+draws all three as one nested bar instead of three columns, and it
+reports a figure that breaks the order as the transcription error it is.
 
 **Can I import my existing Excel borelog data?**
 Yes. Standard office templates import in one click; any other
@@ -189,7 +257,7 @@ small things keep the project growing:
 If you use GeoEQ SPT Logs in a report, thesis, or publication, please
 cite it as:
 
-> Malo, R. C., & Qiu, T. (2026). *GeoEQ SPT Logs* (Version 1.1.0)
+> Malo, R. C., & Qiu, T. (2026). *GeoEQ SPT Logs* (Version 1.2.0)
 > [Computer software]. GeoEQ. https://github.com/geoeq/SPT-Borelogs
 
 BibTeX:
@@ -198,7 +266,7 @@ BibTeX:
 @software{malo2026geoeqsptlogs,
   author  = {Malo, Ripon Chandra and Qiu, Tong},
   title   = {GeoEQ SPT Logs},
-  version = {1.1.0},
+  version = {1.2.0},
   year    = {2026},
   publisher = {GeoEQ},
   url     = {https://github.com/geoeq/SPT-Borelogs}
